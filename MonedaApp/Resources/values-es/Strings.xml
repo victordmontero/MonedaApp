@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">MonedaApp</string>
+  <string name="currency_prompt">Elija una moneda</string>
+  <string name="btn_convert">Convertir</string>
+  <string name="network_err_msg">No se pudo conectar al servicio, por favor verifique su conexión</string>
+  <string name="no_currency_msg">No hay monedas</string>
+  <string name="exploit_msg">Tratando de explotar la aplicación, eso no va a funcionar</string>
+  <string name="other_error">Ha ocurrido un error</string>
+</resources>
