@@ -6,6 +6,7 @@ using System.Net;
 using static Android.Widget.TextView;
 using System.Linq;
 using static Android.Widget.AdapterView;
+using MonedaApp.Utils;
 
 namespace MonedaApp
 {
@@ -49,11 +50,11 @@ namespace MonedaApp
                 }
                 catch (WebException)
                 {
-                    ShowMessageDialog("Error", GetText(Resource.String.network_err_msg));
+                    Helper.ShowMessageDialog(this, "Error", GetText(Resource.String.network_err_msg));
                 }
                 catch (Exception ex)
                 {
-                    ShowMessageDialog("Error", GetText(Resource.String.other_error));
+                    Helper.ShowMessageDialog(this, "Error", GetText(Resource.String.other_error));
                 }
             };
         }
@@ -67,17 +68,8 @@ namespace MonedaApp
             catch (WebException wex)
             {
                 currencies = new string[] { GetText(Resource.String.no_currency_msg) };
-                ShowMessageDialog("Error", GetText(Resource.String.network_err_msg));
+                Helper.ShowMessageDialog(this, "Error", GetText(Resource.String.network_err_msg));
             }
-        }
-
-        private void ShowMessageDialog(string title, string text)
-        {
-            var alert = new AlertDialog.Builder(this).Create();
-            alert.SetTitle(title);
-            alert.SetMessage(text);
-            alert.SetButton("Ok", (sender, ev) => { });
-            alert.Show();
         }
     }
 }
